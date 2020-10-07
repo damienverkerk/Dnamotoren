@@ -1,0 +1,19 @@
+{
+  "name": "dnamotoren",
+  "version": "1.0.0",
+  "description": "Webapplicatie voor dnamotoren",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "webpack"
+  },
+  "author": "Damien Verkerk",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}
