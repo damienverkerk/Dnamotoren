@@ -1,19 +1,11 @@
-import _ from 'lodash';
-import printMe from './print.js';
+import React from 'react';
+import ReactDOM from 'react-dom';
+require("babel-polyfill");
 
-function component() {
-    const element = document.createElement('div');
-    const btn = document.createElement('button');
+import "./css/styles.css";
+import Root from "./root";
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-    btn.innerHTML = 'Click me and check console!';
-    btn.onclick = printMe; 
-
-    element.appendChild(btn);
-
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());
+ReactDOM.render(
+  <Root />,
+  document.getElementById('root')
+);
