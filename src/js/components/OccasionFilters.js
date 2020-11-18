@@ -18,7 +18,7 @@ class OccasionFilters extends React.Component {
 
     render() {
         return (
-            <div style={{ marginBottom: 15 }}>
+            <div className="bg-white">
                 <input type='text' placeholder='search'
                     value={this.props.filters.text}
                     onChange={(e) => {

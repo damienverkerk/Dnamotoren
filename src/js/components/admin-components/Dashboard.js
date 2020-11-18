@@ -4,9 +4,9 @@ import Navigation from "./Navigation";
 class Dashboard extends Component {
     render() {
         return (
-            <div>
+            <div >
                 <Navigation />
-                <div className="container mx-auto">
+                <div className="container mx-auto text-white">
                 <h1> This is your App's protected area </h1>
                 <p>Any routes here will also be protected</p>
                 </div>

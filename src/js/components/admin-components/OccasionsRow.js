@@ -42,7 +42,7 @@ const Occasion = ({id, title, description, brand, manufacture_date, dispatch}) =
     </td>
     <td className="px-6 py-4 whitespace-no-wrap">
         <div className="text-sm leading-5 text-gray-900">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
+           <Link to={`/admin/occasions/${id}`}><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button></Link>
             </div>             
     </td>
     <td className="px-6 py-4 whitespace-no-wrap">

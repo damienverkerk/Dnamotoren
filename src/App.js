@@ -1,68 +1,23 @@
 import React from "react";
+import ReactDom from 'react-dom';
+import Router from './js/components/Router';
 
-import { Route, Switch } from "react-router-dom";
-import { connect } from "react-redux";
+import getAppStore from './js/store/store';
+import {getOccasions} from './js/actions/occasions';
+import { Provider } from 'react-redux';
 
-import ProtectedRoute from "./js/components/ProtectedRoute";
-import Home from "./js/components/Home";
-import Login from "./js/components/Login";
-import Dashboard from "./js/components/admin-components/Dashboard";
-import Occasions from "./js/components/Occasions";
-import About from "./js/components/About";
-import OccasionsCRUD from "./js/components/admin-components/Occasions";
-import Profile from "./js/components/admin-components/Profile";
-import addOccasion from "./js/components/addOccasion";
-import EditOccasion from "./js/components/EditOccasion";
-import Occasion from "./js/components/Occasion";
+import "./css/styles.css";
 
-function App(props) {
-  const { isAuthenticated, isVerifying } = props;
-  return (
-    <Switch>
-      <ProtectedRoute
-        exact
-        path="/admin"
-        component={Dashboard}
-        isAuthenticated={isAuthenticated}
-        isVerifying={isVerifying}
-      />
-      <ProtectedRoute 
-      exact
-      path="/admin/occasions"
-      component={OccasionsCRUD}
-      isAuthenticated={isAuthenticated}
-      isVerifying={isVerifying}
-      />
-      <ProtectedRoute
-      path="/admin/occasions/add"
-      component={addOccasion} 
-      isAuthenticated={isAuthenticated} 
-      isVerifying={isVerifying}/>
-     
-      <ProtectedRoute 
-      path="/admin/occasions/:id" component={EditOccasion} isAuthenticated={isAuthenticated} isVerifying={isVerifying}/>
+const store = getAppStore();
 
-      <ProtectedRoute
-      exact path="/admin/profile"
-      component={Profile}
-      isAuthenticated={isAuthenticated}
-      isVerifying={isVerifying}
-      />
-      
-      <Route exact path="/" component={Home} />
-      <Route path="/login" component={Login} />
-      <Route exact path="/about" component={About} />
-      <Route exact path="/occasions" component={Occasions} />
-      <Route  path="/occasion/:id" component={Occasion}/>
-    </Switch>
-  );
-}
+const template = (
+  <Provider store={store}>
+    <Router />
+  </Provider>
+);
 
-function mapStateToProps(state) {
-  return {
-    isAuthenticated: state.auth.isAuthenticated,
-    isVerifying: state.auth.isVerifying
-  };
-}
+store.dispatch(getOccasions()).then(() => {
+  ReactDom.render(template, document.getElementById('root'));
+});
 
-export default connect(mapStateToProps)(App);
+
