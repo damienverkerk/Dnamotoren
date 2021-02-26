@@ -18,14 +18,14 @@ class OccasionFilters extends React.Component {
 
     render() {
         return (
-            <div className="bg-white">
+            <div className=" flex bg-white">
                 <input type='text' placeholder='search'
                     value={this.props.filters.text}
                     onChange={(e) => {
                         this.props.dispatch(filterText(e.target.value));
                     }}></input>
  
-                sorted By:
+                <p>sorted By:
                 <select
                     value={this.props.filters.sortBy}
                     onChange={(e) => {
@@ -34,7 +34,7 @@ class OccasionFilters extends React.Component {
                     <option value='none'>---</option>
                     <option value='title'>Title</option>
                     <option value='published'>Published</option>
-                </select>
+                </select></p>
                 <br /><br />
  
                 <input type='number' placeholder='startYear' style={{ width: 80 }}

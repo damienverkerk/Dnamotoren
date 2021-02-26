@@ -9,8 +9,7 @@ class OccasionsCRUD extends Component {
         return (
             <div>
                 <Navigation />
-                <h1> Occasions </h1>
-                <NavLink to="/admin/occasions/add" activeClassName='activeNav'><button className="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">+</button></NavLink>
+                <NavLink to="/admin/occasions/add" activeClassName='activeNav'><button className="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">+ Add Occasion</button></NavLink>
                 <OccasionList />
             </div>
         );

@@ -6,6 +6,7 @@ import getAppStore from './js/store/store';
 import {getOccasions} from './js/actions/occasions';
 import { Provider } from 'react-redux';
 
+import "tailwindcss/tailwind.css";
 import "./css/styles.css";
 
 const store = getAppStore();

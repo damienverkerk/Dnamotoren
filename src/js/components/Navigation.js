@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
+    NavLink
   } from "react-router-dom";
 
 
@@ -13,9 +10,9 @@ class Navigation extends Component {
     render() {
         return (
             <div>
-                <nav className="flex items-center justify-between flex-wrap bg-blue-500 p-6">
-                    <div className="flex items-center flex-shrink-0 text-white mr-6">
-                        <span className="font-semibold text-xl tracking-tight">DNA Motoren</span>
+                <nav className="flex items-center justify-between flex-wrap bg-orange-light p-6">
+                    <div className="flex items-center flex-shrink-0  mr-6">
+                        <NavLink exact to="/"><span className="text-white hover:text-black font-semibold text-xl tracking-tight">DNA Motoren</span></NavLink>
                     </div>
                     <div className="block lg:hidden">
                         <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
@@ -24,13 +21,13 @@ class Navigation extends Component {
                     </div>
                     <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                         <div className="text-sm lg:flex-grow">
-                            <Link  className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4" to="/">Home</Link>
-                            <Link  className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"to="/about">About</Link>
-                            <Link  className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4" to="/occasions">Occasions</Link>
+                            <NavLink activeClassName="border-b-2 border-black" className="block mt-4 lg:inline-block lg:mt-0  mr-4 text-white hover:text-black" exact to="/">Home</NavLink>
+                            <NavLink activeClassName="border-b-2 border-black" className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-black mr-4" to="/about">About</NavLink>
+                            <NavLink activeClassName="border-b-2 border-black" className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-black mr-4" to="/occasions">Occasions</NavLink>
                         </div>
                         <div>
                         
-                        <Link className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0" to="/login">Login</Link>
+                        <NavLink className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0" to="/login">Login</NavLink>
                         </div>
                     </div>
                 </nav>
